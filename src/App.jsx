@@ -7,6 +7,7 @@ import SilverPage from "./pages/SilverPage.jsx";
 import GoldPage from "./pages/GoldPage.jsx";
 import CustomizePage from "./pages/CustomizePage.jsx";
 import About from "./pages/About.jsx";
+import ContactPage from "./pages/Contact.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/gold' element={<GoldPage/>}/>
         <Route path='/customized' element={<CustomizePage/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<ContactPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
