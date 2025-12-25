@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { path: '/', label: 'HOME' },
+    { path: '/about', label: 'ABOUT US' },
+    { path: '/gold', label: 'GOLD' },
+    { path: '/silver', label: 'SILVER' },
+    { path: '/customized', label: 'CUSTOMIZED JEWELLERY' },
+    { path: '/awards', label: 'AWARDS & ACHIEVEMENTS' },
+    { path: '/contact', label: 'CONTACT US' }
+  ];
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div className="w-full" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
       {/* Top Header with Logo and Contact */}
@@ -20,7 +34,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-5 md:py-6">
             {/* Logo */}
-            <a href="/" className="group flex items-center space-x-3 transition-all duration-300">
+            <Link to="/" className="group flex items-center space-x-3 transition-all duration-300">
               <div className="relative">
                 <h1 className="text-3xl md:text-4xl font-normal tracking-tight text-gray-900 transition-all duration-300 group-hover:text-gray-700" 
                     style={{ letterSpacing: '0.12em', fontFamily: 'Georgia, "Times New Roman", serif' }}>
@@ -32,7 +46,7 @@ export default function Navbar() {
                 </p>
                 <div className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-gray-900 to-gray-400 group-hover:w-full transition-all duration-500"></div>
               </div>
-            </a>
+            </Link>
 
             {/* Contact Info - Desktop */}
             <div className="hidden lg:flex flex-col items-end space-y-2 text-sm" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
@@ -78,89 +92,40 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex justify-center items-center h-16 space-x-10" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-            <a href="/" className="group relative text-sm text-gray-900 hover:text-gray-600 font-normal tracking-wide transition-all duration-300 py-2">
-              HOME
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="/about" className="group relative text-sm text-gray-700 hover:text-gray-900 font-normal tracking-wide transition-all duration-300 py-2">
-              ABOUT US
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="/gold" className="group relative text-sm text-gray-700 hover:text-gray-900 font-normal tracking-wide transition-all duration-300 py-2">
-              GOLD
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="/silver" className="group relative text-sm text-gray-700 hover:text-gray-900 font-normal tracking-wide transition-all duration-300 py-2">
-              SILVER
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="/customized" className="group relative text-sm text-gray-700 hover:text-gray-900 font-normal tracking-wide transition-all duration-300 py-2">
-              CUSTOMIZED JEWELLERY
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="/awards" className="group relative text-sm text-gray-700 hover:text-gray-900 font-normal tracking-wide transition-all duration-300 py-2">
-              AWARDS & ACHIEVEMENTS
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="/contact" className="group relative text-sm text-gray-700 hover:text-gray-900 font-normal tracking-wide transition-all duration-300 py-2">
-              CONTACT US
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
+            {navLinks.map((link) => (
+              <Link 
+                key={link.path}
+                to={link.path} 
+                className={`group relative text-sm font-normal tracking-wide transition-all duration-300 py-2 ${
+                  isActive(link.path) ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'
+                }`}
+              >
+                {link.label}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gray-900 transition-all duration-300 ${
+                  isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div className="lg:hidden py-5" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
               <div className="flex flex-col space-y-1">
-                <a 
-                  href="/" 
-                  className="text-sm text-gray-900 hover:text-gray-600 hover:bg-gray-50 font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300" 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  HOME
-                </a>
-                <a 
-                  href="/about" 
-                  className="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300" 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  ABOUT US
-                </a>
-                <a 
-                  href="/gold" 
-                  className="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300" 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  GOLD
-                </a>
-                <a 
-                  href="/silver" 
-                  className="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300" 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  SILVER
-                </a>
-                <a 
-                  href="/customized" 
-                  className="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300" 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  CUSTOMIZED JEWELLERY
-                </a>
-                <a 
-                  href="/awards" 
-                  className="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300" 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  AWARDS & ACHIEVEMENTS
-                </a>
-                <a 
-                  href="/contact" 
-                  className="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300" 
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  CONTACT US
-                </a>
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.path}
+                    to={link.path}
+                    className={`text-sm font-normal tracking-wide py-3 px-4 rounded-lg transition-all duration-300 ${
+                      isActive(link.path) 
+                        ? 'text-gray-900 bg-gray-100' 
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
                 
                 {/* Mobile Contact Info */}
                 <div className="pt-5 mt-5 border-t border-gray-200 space-y-3">
