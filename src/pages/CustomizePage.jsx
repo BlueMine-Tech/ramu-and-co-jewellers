@@ -3,6 +3,18 @@ import { Check, Sparkles, Gem, Palette, Clock, Star } from 'lucide-react';
 import CustomizedBanner from '../components/CustomizedBanner';
 import FeaturesSection from '../components/Features';
 
+import customizedhero from '../assets/customizedhero.png'
+
+// Import customized images
+import customized1 from '../assets/customized1.png';
+import customized2 from '../assets/customized2.png';
+import customized3 from '../assets/customized3.jpg';
+import customized4 from '../assets/customized4.png';
+import customized5 from '../assets/customized5.png';
+import customized6 from '../assets/customized6.png';
+import customized7 from '../assets/customized7.png';
+import customized8 from '../assets/customized8.png';
+
 // Customized Content Section
 function CustomizedContentSection() {
   const features = [
@@ -52,14 +64,11 @@ function CustomizedContentSection() {
           {/* Right Image */}
           <div className="relative order-1 lg:order-2">
             <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
-                <p className="text-gray-400 text-sm">Add customized jewelry image</p>
-              </div>
-              {/* <img 
-                src="customized-image.jpg"
+              <img 
+                src={customizedhero}
                 alt="Customized Jewellery"
                 className="w-full h-full object-cover"
-              /> */}
+              />
             </div>
           </div>
 
@@ -163,9 +172,11 @@ function HowItWorksSection() {
 
 // Gallery Section
 function CustomizedGallerySection() {
-  const galleryImages = Array.from({ length: 8 }, (_, i) => ({
+  const images = [customized1, customized2, customized3, customized4, customized5, customized6, customized7, customized8];
+  
+  const galleryImages = images.map((img, i) => ({
     id: i + 1,
-    image: `customized-${i + 1}.jpg`,
+    image: img,
     title: `Custom Design ${i + 1}`
   }));
 
@@ -190,14 +201,11 @@ function CustomizedGallerySection() {
               className="group relative bg-white border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
               <div className="aspect-square overflow-hidden bg-white">
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
-                  <span className="text-gray-400 text-xs">Design {item.id}</span>
-                </div>
-                {/* <img 
+                <img 
                   src={item.image} 
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                /> */}
+                />
               </div>
               
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-gray-300 transition-all duration-500 pointer-events-none"></div>
