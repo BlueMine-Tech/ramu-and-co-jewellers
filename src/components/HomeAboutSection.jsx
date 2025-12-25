@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Play } from 'lucide-react';
-import feedbackimg from '../assets/feedbackimg.png'
+import feedbackimg from '../assets/feedbackimg.png';
 
 function AboutIntroSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -49,76 +49,88 @@ function AboutIntroSection() {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 bg-white relative overflow-hidden" 
-      style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
+      className="py-20 md:py-28 bg-gradient-to-b from-white via-gray-50/30 to-white relative overflow-hidden" 
+      style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
     >
-      {/* Subtle decorative background element */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gray-50 rounded-full filter blur-3xl opacity-30" style={{ transform: 'translate(30%, -30%)' }}></div>
+      {/* Enhanced decorative elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-gray-100/40 via-gray-50/20 to-transparent rounded-full filter blur-3xl" style={{ transform: 'translate(40%, -40%)' }}></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-gray-100/30 to-transparent rounded-full filter blur-3xl" style={{ transform: 'translate(-30%, 30%)' }}></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Content */}
           <div 
-            className="space-y-8"
+            className="space-y-10"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+              transition: 'all 0.9s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
             <div>
-              <p className="text-xs tracking-[0.2em] text-gray-400 uppercase mb-3 font-light">
+              <p className="text-xs tracking-[0.3em] text-gray-400 uppercase mb-4 font-normal" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 Welcome to
               </p>
-              <h2 className="text-5xl md:text-6xl font-extralight text-gray-900 mb-3 tracking-tight leading-tight">
-                Ramu & Co{' '}
-                <span className="font-light block mt-1" style={{ letterSpacing: '-0.02em' }}>
-                  Jewellers
-                </span>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal text-gray-900 mb-2 leading-none" style={{ letterSpacing: '-0.02em' }}>
+                Ramu & Co
               </h2>
-              <div className="flex items-center gap-3 mt-6">
-                <div className="w-16 h-px bg-gradient-to-r from-gray-900 to-gray-300"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-gray-900"></div>
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-700 italic" style={{ letterSpacing: '0.01em' }}>
+                Jewellers
+              </h3>
+              <div className="flex items-center gap-4 mt-8">
+                <div className="w-20 h-px bg-gradient-to-r from-gray-900 via-gray-500 to-transparent"></div>
+                <div className="flex gap-1.5">
+                  <div className="w-1 h-1 rounded-full bg-gray-900"></div>
+                  <div className="w-1 h-1 rounded-full bg-gray-500"></div>
+                  <div className="w-1 h-1 rounded-full bg-gray-300"></div>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-6 text-gray-600 leading-relaxed">
-              <p className="text-base font-light" style={{ lineHeight: '1.8' }}>
-                Trusted Goldsmith in Trichy and Reputed Trademarked Jewellery Showroom for more than 50 years. Showroom offers a vast range of Exclusive & Traditional Gold & silverwares, ranging from{' '}
-                <span className="italic font-normal text-gray-900 tracking-wide">
-                  RINGS, CHAIN, HARAM, NECKLACE in GOLD & SILVER CUTLERY to FOOD PLATE & TEMPLE SILVER KAVASAM
-                </span>
-                {' '}are Available.
+            <div className="space-y-7 text-gray-700" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+              <p className="text-base md:text-lg font-light leading-relaxed" style={{ lineHeight: '1.9' }}>
+                Trusted Goldsmith in Trichy and Reputed Trademarked Jewellery Showroom for more than{' '}
+                <span className="font-semibold text-gray-900">50 years</span>. Our showroom offers a vast range of Exclusive & Traditional Gold & Silverwares, ranging from{' '}
+                <span className="italic font-medium text-gray-900" style={{ letterSpacing: '0.02em' }}>
+                  Rings, Chains, Haram, Necklaces in Gold & Silver Cutlery to Food Plates & Temple Silver Kavasam
+                </span>.
               </p>
               
-              <p className="text-base font-light" style={{ lineHeight: '1.8' }}>
-                We Have Exclusive Gold & silver items which are Designed Customize to meet one individual dreams. Our products reflect unbelievable Clarity and extraordinary quality with good Finishing where quality meets value.
+              <p className="text-base md:text-lg font-light leading-relaxed" style={{ lineHeight: '1.9' }}>
+                We specialize in Exclusive Gold & Silver items that are{' '}
+                <span className="font-medium text-gray-900">Designed & Customized</span>{' '}
+                to meet your individual dreams. Our products reflect unbelievable clarity and extraordinary quality with impeccable finishing—where{' '}
+                <span className="italic font-medium text-gray-900">quality meets value</span>.
               </p>
             </div>
 
-            <div className="pt-6">
-              <button 
-                className="group relative px-10 py-4 bg-gray-900 text-white text-xs font-light tracking-[0.15em] overflow-hidden uppercase"
+            <div className="pt-4">
+              <a 
+                href="/about"
+                className="group inline-block relative px-12 py-4 bg-gray-900 text-white text-xs font-medium tracking-[0.2em] overflow-hidden uppercase transition-all duration-500 hover:px-14"
                 style={{ 
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)'
+                  fontFamily: 'system-ui, -apple-system, sans-serif',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1)',
+                  letterSpacing: '0.15em'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 10px 35px rgba(0, 0, 0, 0.2), 0 6px 15px rgba(0, 0, 0, 0.15)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1)';
                 }}
               >
-                <span className="relative z-10">About Us</span>
+                <span className="relative z-10 inline-flex items-center gap-3">
+                  Discover Our Story
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
                 <div 
-                  className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 opacity-0 group-hover:opacity-100"
-                  style={{ transition: 'opacity 0.4s ease' }}
+                  className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 ></div>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -128,25 +140,25 @@ function AboutIntroSection() {
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
+              transition: 'all 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
             }}
           >
             <div 
-              className="relative w-full rounded-sm overflow-hidden"
+              className="relative w-full rounded overflow-hidden"
               style={{ 
                 paddingBottom: '56.25%',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.08)',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                boxShadow: '0 25px 70px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1)',
+                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               onMouseEnter={(e) => {
                 setIsHovering(true);
-                e.currentTarget.style.transform = 'translateY(-4px) scale(1.01)';
-                e.currentTarget.style.boxShadow = '0 30px 80px rgba(0, 0, 0, 0.15), 0 12px 30px rgba(0, 0, 0, 0.1)';
+                e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 35px 90px rgba(0, 0, 0, 0.2), 0 15px 35px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
                 setIsHovering(false);
                 e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.08)';
+                e.currentTarget.style.boxShadow = '0 25px 70px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1)';
               }}
             >
               
@@ -178,49 +190,60 @@ function AboutIntroSection() {
                 Your browser does not support the video tag.
               </video>
 
-              {/* Play Button Overlay */}
+              {/* Enhanced Play Button Overlay */}
               {!isPlaying && (
                 <div 
                   className="absolute inset-0 flex items-center justify-center cursor-pointer"
                   style={{ 
-                    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%)',
+                    backdropFilter: 'blur(1px)',
                     zIndex: 2,
-                    transition: 'background-color 0.4s ease'
+                    transition: 'all 0.4s ease'
                   }}
                   onClick={handlePlayVideo}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.35)'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.25)'}
+                  onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%)'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%)'}
                 >
                   <div 
                     className="relative"
                     style={{
-                      transform: isHovering ? 'scale(1.05)' : 'scale(1)',
-                      transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                      transform: isHovering ? 'scale(1.1)' : 'scale(1)',
+                      transition: 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)'
                     }}
                   >
                     <div 
-                      className="w-20 h-20 bg-white rounded-full flex items-center justify-center"
+                      className="w-24 h-24 bg-white rounded-full flex items-center justify-center relative"
                       style={{
-                        boxShadow: '0 8px 30px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
-                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(0, 0, 0, 0.15), 0 0 0 8px rgba(255, 255, 255, 0.1)',
+                        transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
                       }}
                     >
                       <Play 
-                        className="w-10 h-10 text-gray-900 ml-1" 
+                        className="w-11 h-11 text-gray-900 ml-1.5" 
                         fill="currentColor"
+                        strokeWidth={0}
                         style={{ 
-                          filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))',
+                          filter: 'drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15))',
                           transition: 'transform 0.3s ease'
                         }}
                       />
                     </div>
-                    {/* Decorative ring */}
+                    
+                    {/* Animated pulse rings */}
+                    <div 
+                      className="absolute inset-0 rounded-full border-2 border-white"
+                      style={{
+                        opacity: isHovering ? 0.8 : 0,
+                        transform: isHovering ? 'scale(1.4)' : 'scale(1)',
+                        transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
+                      }}
+                    ></div>
                     <div 
                       className="absolute inset-0 rounded-full border border-white"
                       style={{
-                        opacity: isHovering ? 0.6 : 0,
-                        transform: isHovering ? 'scale(1.3)' : 'scale(1)',
-                        transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                        opacity: isHovering ? 0.4 : 0,
+                        transform: isHovering ? 'scale(1.7)' : 'scale(1)',
+                        transition: 'all 0.9s cubic-bezier(0.4, 0, 0.2, 1)'
                       }}
                     ></div>
                   </div>
@@ -228,12 +251,19 @@ function AboutIntroSection() {
               )}
             </div>
 
-            {/* Decorative corner accent */}
+            {/* Enhanced decorative corner accents */}
             <div 
-              className="absolute -bottom-4 -right-4 w-24 h-24 border-r border-b border-gray-200"
+              className="absolute -top-6 -left-6 w-20 h-20 border-t-2 border-l-2 border-gray-200/60"
               style={{
-                opacity: isVisible ? 0.5 : 0,
-                transition: 'opacity 1s ease 0.5s'
+                opacity: isVisible ? 1 : 0,
+                transition: 'opacity 1s ease 0.6s'
+              }}
+            ></div>
+            <div 
+              className="absolute -bottom-6 -right-6 w-32 h-32 border-r-2 border-b-2 border-gray-200/60"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transition: 'opacity 1s ease 0.7s'
               }}
             ></div>
           </div>
