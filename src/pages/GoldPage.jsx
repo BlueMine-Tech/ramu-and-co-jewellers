@@ -1,28 +1,35 @@
-import React, { useState } from 'react';
-import { Check, Award, RefreshCw, Medal, Clock, TrendingDown } from 'lucide-react';
+import React from 'react';
+import { Check } from 'lucide-react';
 import FeaturesSection from '../components/Features';
-import goldpagebanner from '../assets/goldpagebanner.png'
-import goldpage1 from '../assets/goldpage1.png'
-import goldpage2 from '../assets/goldpage2.png'
-import goldpage3 from '../assets/goldpage3.png'
-import goldpage4 from '../assets/goldpage4.png'
-import goldpage5 from '../assets/goldpage5.png'
-import goldpage6 from '../assets/goldpage6.png'
-import goldpage7 from '../assets/goldpage7.png'
-import goldpage8 from '../assets/goldpage8.png'
-import goldpage9 from '../assets/goldpage9.png'
-import goldpage10 from '../assets/goldpage10.png'
-import goldpage11 from '../assets/goldpage11.png'
-import goldpage12 from '../assets/goldpage12.png'
-import goldpage13 from '../assets/goldpage13.png'
-import goldpage14 from '../assets/goldpage14.png'
-import goldpage15 from '../assets/goldpage15.png'
-import goldpage16 from '../assets/goldpage16.png'
-import goldpage17 from '../assets/goldpage17.png'
-import goldpage18 from '../assets/goldpage18.png'
-import goldpage19 from '../assets/golpage19.png'
-import goldpage20 from '../assets/goldpage20.png'
-
+import goldpagebanner from '../assets/goldpagebanner.png';
+import goldpage1 from '../assets/goldpage1.png';
+import goldpage2 from '../assets/goldpage2.png';
+import goldpage3 from '../assets/goldpage3.png';
+import goldpage4 from '../assets/goldpage4.png';
+import goldpage5 from '../assets/goldpage5.png';
+import goldpage6 from '../assets/goldpage6.png';
+import goldpage7 from '../assets/goldpage7.png';
+import goldpage8 from '../assets/goldpage8.png';
+import goldpage9 from '../assets/goldpage9.png';
+import goldpage10 from '../assets/goldpage10.png';
+import goldpage11 from '../assets/goldpage11.png';
+import goldpage12 from '../assets/goldpage12.png';
+import goldpage13 from '../assets/goldpage13.png';
+import goldpage14 from '../assets/goldpage14.png';
+import goldpage15 from '../assets/goldpage15.png';
+import goldpage16 from '../assets/goldpage16.png';
+import goldpage17 from '../assets/goldpage17.png';
+import goldpage18 from '../assets/goldpage18.png';
+import goldpage19 from '../assets/golpage19.png';
+import goldpage20 from '../assets/goldpage20.png';
+import goldpage21 from '../assets/goldpage21.jpg';
+import goldpage22 from '../assets/goldpage22.jpg';
+import goldpage23 from '../assets/goldpage23.jpg';
+import goldpage24 from '../assets/goldpage24.jpg';
+import goldpage25 from '../assets/goldpage25.jpg';
+import goldpage26 from '../assets/goldpage26.png';
+import goldpage27 from '../assets/goldpage27.png';
+import goldpage28 from '../assets/goldpage28.png';
 
 function GoldBanner() {
   return (
@@ -105,9 +112,7 @@ function GoldContentSection() {
 
 // Gold Products Showcase
 function GoldProductsShowcase() {
-  const [showMore, setShowMore] = useState(false);
-
-  const firstBatch = [
+  const products = [
     { id: 1, image: goldpage2 },
     { id: 2, image: goldpage3 },
     { id: 3, image: goldpage4 },
@@ -120,9 +125,6 @@ function GoldProductsShowcase() {
     { id: 10, image: goldpage11 },
     { id: 11, image: goldpage12 },
     { id: 12, image: goldpage9 },
-  ];
-
-  const secondBatch = [
     { id: 13, image: goldpage13 },
     { id: 14, image: goldpage14 },
     { id: 15, image: goldpage15 },
@@ -131,10 +133,15 @@ function GoldProductsShowcase() {
     { id: 18, image: goldpage18 },
     { id: 19, image: goldpage19 },
     { id: 20, image: goldpage20 },
-
+    { id: 21, image: goldpage21 },
+    { id: 22, image: goldpage22 },
+    { id: 23, image: goldpage23 },
+    { id: 24, image: goldpage24 },
+    { id: 25, image: goldpage25 },
+    { id: 26, image: goldpage26 },
+    { id: 27, image: goldpage27 },
+    { id: 28, image: goldpage28 },
   ];
-
-  const displayedProducts = showMore ? [...firstBatch, ...secondBatch] : firstBatch;
 
   return (
     <section className="py-12 sm:py-16 bg-gray-50">
@@ -148,7 +155,7 @@ function GoldProductsShowcase() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {displayedProducts.map((product) => (
+          {products.map((product) => (
             <div
               key={product.id}
               className="group relative bg-white border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer"
@@ -166,15 +173,6 @@ function GoldProductsShowcase() {
           ))}
         </div>
 
-        <div className="text-center mt-8 sm:mt-12">
-          <button 
-            onClick={() => setShowMore(!showMore)}
-            className="px-8 sm:px-10 py-3 sm:py-3.5 bg-white border-2 border-gray-900 text-gray-900 text-xs sm:text-sm font-normal tracking-widest hover:bg-gray-900 hover:text-white transition-all duration-300 uppercase"
-          >
-            {showMore ? 'Show Less' : 'View More Products'}
-          </button>
-        </div>
-
       </div>
     </section>
   );
@@ -187,7 +185,7 @@ export default function GoldPage() {
       <GoldBanner />
       <GoldContentSection />
       <GoldProductsShowcase />
-      <FeaturesSection/>
+      <FeaturesSection />
     </div>
   );
 }
