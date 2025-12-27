@@ -54,7 +54,7 @@ function SpecialCollectionSection() {
             Curated For You
           </p>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
-            Signature <span className="font-light italic">Collections</span>
+            Our<span className="font-light italic">Collections</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed" style={{ lineHeight: '1.9' }}>
             Explore our most sought-after pieces, where{' '}
