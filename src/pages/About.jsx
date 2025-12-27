@@ -4,6 +4,7 @@ import AboutUsBanner from '../components/AboutBanner';
 import store from '../assets/store.jpg'
 import director from '../assets/director.jpg'
 import FeaturesSection from '../components/Features';
+import SpecialCollectionSection from '../components/SpecialCollections';
 // Hero Section with Image
 function AboutHeroSection() {
   return (
@@ -205,6 +206,7 @@ export default function AboutPage() {
     <div style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
       <AboutUsBanner/>
       <AboutHeroSection />
+      <SpecialCollectionSection/>
       <MissionSection />
       <VisionSection />
       <ManagingDirectorSection />
