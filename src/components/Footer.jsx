@@ -1,5 +1,8 @@
 import React from 'react';
 import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import facebookQR from '../assets/facebook.jpeg';
+import instagramQR from '../assets/instagram.jpeg';
+import youtubeQR from '../assets/youtube.jpeg';
 
 function Footer() {
   return (
@@ -163,22 +166,57 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Location with QR Code */}
+          {/* Social Media QR Codes */}
           <div>
             <h3 className="text-lg font-normal mb-6 pb-3 border-b border-gray-300 relative" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              Find Us
+              Connect With Us
               <div className="absolute bottom-0 left-0 w-12 h-px bg-gray-900"></div>
             </h3>
-            <div className="bg-white p-5 rounded-lg inline-block border-2 border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-300">
-              <div className="w-40 h-40 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center border border-gray-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 to-transparent"></div>
-                <p className="text-xs text-gray-400 text-center px-2 relative z-10 font-light" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  QR Code<br/>Location
+            <div className="flex flex-col gap-6">
+              {/* Facebook QR */}
+              <div className="flex items-center gap-4">
+                <div className="bg-white p-4 rounded-lg border-2 border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 hover:border-gray-300 flex-shrink-0">
+                  <img 
+                    src={facebookQR} 
+                    alt="Facebook QR Code"
+                    className="w-28 h-28 object-contain"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 font-light" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  Facebook
+                </p>
+              </div>
+              
+              {/* Instagram QR */}
+              <div className="flex items-center gap-4">
+                <div className="bg-white p-4 rounded-lg border-2 border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 hover:border-gray-300 flex-shrink-0">
+                  <img 
+                    src={instagramQR} 
+                    alt="Instagram QR Code"
+                    className="w-28 h-28 object-contain"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 font-light" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  Instagram
+                </p>
+              </div>
+              
+              {/* YouTube QR */}
+              <div className="flex items-center gap-4">
+                <div className="bg-white p-4 rounded-lg border-2 border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 hover:border-gray-300 flex-shrink-0">
+                  <img 
+                    src={youtubeQR} 
+                    alt="YouTube QR Code"
+                    className="w-28 h-28 object-contain"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 font-light" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  YouTube
                 </p>
               </div>
             </div>
-            <p className="text-xs text-gray-500 mt-4 font-light italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              Scan to navigate
+            <p className="text-xs text-gray-500 mt-6 font-light italic text-center" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              Scan to follow us
             </p>
           </div>
         </div>
