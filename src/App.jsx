@@ -9,6 +9,7 @@ import CustomizePage from "./pages/CustomizePage.jsx";
 import About from "./pages/About.jsx";
 import ContactPage from "./pages/Contact.jsx";
 import AwardsPage from "./pages/Awards.jsx";
+import CollectionsPage from "./pages/Our collections.jsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<ContactPage/>}/>
         <Route path='/awards' element={<AwardsPage/>}/>
+        <Route path='/collections' element={<CollectionsPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

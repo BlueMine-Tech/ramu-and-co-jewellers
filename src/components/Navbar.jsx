@@ -22,6 +22,7 @@ export default function Navbar() {
     { path: '/silver', label: 'SILVER' },
     { path: '/customized', label: 'CUSTOMIZED JEWELLERY' },
     { path: '/awards', label: 'AWARDS & ACHIEVEMENTS' },
+    { path: '/collections', label: 'OUR COLLECTIONS' },
     { path: '/contact', label: 'CONTACT US' }
   ];
 

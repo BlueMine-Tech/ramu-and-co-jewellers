@@ -1,5 +1,6 @@
 import React from 'react';
-import { Award, RefreshCw, Medal, Clock, TrendingDown } from 'lucide-react';
+import { Award, RefreshCw, Medal, Clock, TrendingDown, Gem } from 'lucide-react';
+
 
 function FeaturesSection() {
   const features = [
@@ -33,6 +34,13 @@ function FeaturesSection() {
       title: 'Lowest V.A.Charges',
       description: 'Best Value Guarantee'
     },
+    {
+  id: 6,
+  icon: Gem,
+  title: 'Customized Jewellery',
+  description: 'Made Just for You'
+}
+
   ];
 
   return (
@@ -53,7 +61,7 @@ function FeaturesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
