@@ -93,20 +93,20 @@ function ContactFormMapSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
           {/* Google Map */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-gray-100 rounded-lg overflow-hidden shadow-lg h-full min-h-[400px] lg:min-h-[600px]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6298!2d78.6866!3d10.8113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf50e123456789%3A0x1234567890abcdef!2sRamu%20%26%20Co%20Jewellers!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ramu & Co Jewellers Location"
-              ></iframe>
-            </div>
-          </div>
+      <div className="order-2 lg:order-1">
+  <div className="bg-gray-100 rounded-lg overflow-hidden shadow-lg h-full min-h-[400px] lg:min-h-[600px]">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4824791891766!2d78.68409447484385!3d10.824167558628392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf503e9a6077b%3A0xd43f15b21a931b01!2sRamu%20%26%20Co%20Jewellers!5e0!3m2!1sen!2sin!4v1735820000000!5m2!1sen!2sin"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Ramu & Co Jewellers Location"
+    ></iframe>
+  </div>
+</div>
 
           {/* Contact Form */}
           <div className="order-1 lg:order-2">
