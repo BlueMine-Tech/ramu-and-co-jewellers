@@ -22,7 +22,7 @@ import goldpage17 from '../assets/goldpage17.png';
 import goldpage18 from '../assets/goldpage18.png';
 import goldpage19 from '../assets/golpage19.png';
 import goldpage20 from '../assets/goldpage20.png';
-import goldpage21 from '../assets/goldpage21.jpg';
+import goldpage21 from '../assets/goldpage21.png';
 import goldpage22 from '../assets/goldpage22.jpg';
 import goldpage23 from '../assets/goldpage23.jpg';
 import goldpage24 from '../assets/goldpage24.jpg';
