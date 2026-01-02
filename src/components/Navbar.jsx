@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
+import logo from '../assets/logo.png'; // Add your logo image path
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,17 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-5 md:py-6">
             {/* Logo */}
-            <Link to="/" className="group flex items-center space-x-3 transition-all duration-300">
+            <Link to="/" className="group flex items-center space-x-4 transition-all duration-300">
+              {/* Logo Image */}
+              <div className="flex-shrink-0">
+                <img 
+                  src={logo} 
+                  alt="Ramu & Co Logo" 
+                  className="h-16 w-16 md:h-20 md:w-20 object-contain transition-all duration-300 group-hover:scale-105"
+                />
+              </div>
+              
+              {/* Company Name */}
               <div className="relative">
                 <h1 className="text-3xl md:text-4xl font-normal tracking-tight text-gray-900 transition-all duration-300 group-hover:text-gray-700" 
                     style={{ letterSpacing: '0.12em', fontFamily: 'Georgia, "Times New Roman", serif' }}>
