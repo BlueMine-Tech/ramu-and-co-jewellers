@@ -8,7 +8,7 @@ import customizedhero from '../assets/customizedhero.png'
 // Import customized images
 import customized1 from '../assets/customized1.png';
 import customized2 from '../assets/customized2.png';
-import customized3 from '../assets/customized3.jpg';
+import customized3 from '../assets/customized3.png';
 import customized4 from '../assets/customized4.png';
 import customized5 from '../assets/customized5.png';
 import customized6 from '../assets/customized6.png';

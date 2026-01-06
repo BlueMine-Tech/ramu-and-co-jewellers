@@ -8,6 +8,8 @@ import awards3 from '../assets/awards3.png';
 import awards4 from '../assets/awards4.png';
 import awards5 from '../assets/awards5.png';
 import awards6 from '../assets/awards6.png';
+import awards7 from '../assets/awards7.jpeg';
+import awards8 from '../assets/awards8.jpeg';
 
 // Awards Banner Component
 function AwardsBanner() {
@@ -91,14 +93,16 @@ function RecognitionStats() {
 function AwardsGallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const awards = [
-    { id: 1, image: awards1, title: 'BNI Fortune - Trichy Awards Night 2024', description: 'Highest Visitors & Traffic Light Award' },
-    { id: 2, image: awards2, title: 'BNI Fortune - Trichy Awards Night 2023', description: 'Multiple Excellence Awards' },
-    { id: 3, image: awards3, title: 'Customer Testimonials', description: 'Recognition for Outstanding Service' },
-    { id: 4, image: awards4, title: 'Industry Recognition', description: 'Excellence in Jewelry Craftsmanship' },
-    { id: 5, image: awards5, title: 'Business Excellence Award', description: 'Best Gold & Silver Jewellers in Trichy' },
-    { id: 6, image: awards6, title: 'Customer Appreciation', description: 'Quality & Service Excellence' }
-  ];
+ const awards = [
+  { id: 1, image: awards1, title: 'BNI Fortune - Trichy Awards Night 2024', description: 'Highest Visitors & Traffic Light Award' },
+  { id: 2, image: awards7, title: 'Founder & Visionary', description: 'Leading Excellence in Jewelry Industry' },
+  { id: 3, image: awards2, title: 'BNI Fortune - Trichy Awards Night 2023', description: 'Multiple Excellence Awards' },
+  { id: 4, image: awards3, title: 'Customer Testimonials', description: 'Recognition for Outstanding Service' },
+  { id: 5, image: awards8, title: 'Entrepreneurial Leadership', description: 'Building Trust & Quality Since Inception' },
+  { id: 6, image: awards4, title: 'Industry Recognition', description: 'Excellence in Jewelry Craftsmanship' },
+  { id: 7, image: awards5, title: 'Business Excellence Award', description: 'Best Gold & Silver Jewellers in Trichy' },
+  { id: 8, image: awards6, title: 'Customer Appreciation', description: 'Quality & Service Excellence' }
+];
 
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
