@@ -226,31 +226,38 @@ function Footer() {
       <div className="bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           
-          {/* Social Media Icons */}
-          <div className="flex justify-center space-x-8 mb-6">
-            <a 
-              href="#" 
-              className="group w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
-            </a>
-            <a 
-              href="#" 
-              className="group w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
-            </a>
-            <a 
-              href="#" 
-              className="group w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg"
-              aria-label="YouTube"
-            >
-              <Youtube className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
-            </a>
-          </div>
-          
+     <div className="flex justify-center space-x-8 mb-6">
+  <a
+    href="https://www.facebook.com/p/RAMU-CO-Jewellers-Since-1965-61557649941811/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg"
+    aria-label="Facebook"
+  >
+    <Facebook className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
+  </a>
+
+  <a
+    href="https://www.instagram.com/ramuandcojewellerstrichy/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg"
+    aria-label="Instagram"
+  >
+    <Instagram className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
+  </a>
+
+  <a
+    href="https://www.youtube.com/@ramuandcojewellerstrichy"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg"
+    aria-label="YouTube"
+  >
+    <Youtube className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
+  </a>
+</div>
+
           {/* Decorative divider */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-gray-300 to-gray-200"></div>
@@ -262,7 +269,7 @@ function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 pt-6 border-t border-gray-200 font-light" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             <p>Copyrights © 2025. <span className="font-normal">Ramu & Co Jewellers</span>. All Rights Reserved.</p>
             <p className="mt-3 md:mt-0">
-              Designed By <span className="font-normal text-gray-700">Techcmantix Technologies Pvt. Ltd.</span>
+              Designed By <span className="font-normal text-gray-700">Bluemine Technologies.</span>
             </p>
           </div>
         </div>
