@@ -5,6 +5,7 @@ import HomeBanner1 from '../components/HomeBanner1.jsx';
 import FeaturedCollections from '../components/FeaturedCollections.jsx';
 import AboutIntroSection from '../components/HomeAboutSection.jsx';
 import YouTubeVideoSection from '../components/YoutubeVideoSection.jsx';
+import GoogleReviewsSection from '../components/Googlereviewsection.jsx';
 
 const Homepage = () => {
   return (
@@ -79,6 +80,7 @@ const Homepage = () => {
         <div className="absolute bottom-10 right-10 w-40 h-40 border border-gray-100 rounded-full opacity-30 -z-10"></div>
       </div>
      <YouTubeVideoSection/>
+     <GoogleReviewsSection/>
       <JewelleryCategoriesSection />
       <HomeBanner1 />
       <FeaturedCollections />
