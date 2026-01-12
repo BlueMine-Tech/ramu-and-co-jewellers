@@ -73,18 +73,76 @@ function ContactFormMapSection() {
     comments: ''
   });
 
+  const [submitStatus, setSubmitStatus] = useState(''); // '', 'sending', 'success', 'error'
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    
+    // For mobile field, only allow numbers and limit to 10 digits
+    if (name === 'mobile') {
+      const numericValue = value.replace(/\D/g, '');
+      setFormData({
+        ...formData,
+        [name]: numericValue.slice(0, 10)
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for contacting us! We will get back to you soon.');
+    
+    // Validate mobile number
+    if (formData.mobile.length !== 10 || !/^[0-9]{10}$/.test(formData.mobile)) {
+      alert('Please enter a valid 10-digit mobile number');
+      return;
+    }
+    
+    setSubmitStatus('sending');
+    
+    try {
+      // Using Web3Forms API
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '5020b0bf-7511-48ac-9a56-76b41aa85545', // Replace with your key from web3forms.com
+          name: formData.name,
+          email: formData.email,
+          phone: formData.mobile,
+          subject: formData.subject,
+          message: formData.comments,
+          to: 'manojramesh@ramuandcojewellers.com'
+        })
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          mobile: '',
+          subject: '',
+          comments: ''
+        });
+        setTimeout(() => setSubmitStatus(''), 5000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus(''), 5000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus(''), 5000);
+    }
   };
 
   return (
@@ -93,20 +151,20 @@ function ContactFormMapSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
           {/* Google Map */}
-      <div className="order-2 lg:order-1">
-  <div className="bg-gray-100 rounded-lg overflow-hidden shadow-lg h-full min-h-[400px] lg:min-h-[600px]">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4824791891766!2d78.68409447484385!3d10.824167558628392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf503e9a6077b%3A0xd43f15b21a931b01!2sRamu%20%26%20Co%20Jewellers!5e0!3m2!1sen!2sin!4v1735820000000!5m2!1sen!2sin"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Ramu & Co Jewellers Location"
-    ></iframe>
-  </div>
-</div>
+          <div className="order-2 lg:order-1">
+            <div className="bg-gray-100 rounded-lg overflow-hidden shadow-lg h-full min-h-[400px] lg:min-h-[600px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4824791891766!2d78.68409447484385!3d10.824167558628392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf503e9a6077b%3A0xd43f15b21a931b01!2sRamu%20%26%20Co%20Jewellers!5e0!3m2!1sen!2sin!4v1735820000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ramu & Co Jewellers Location"
+              ></iframe>
+            </div>
+          </div>
 
           {/* Contact Form */}
           <div className="order-1 lg:order-2">
@@ -120,7 +178,7 @@ function ContactFormMapSection() {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-normal text-gray-700 mb-2">
@@ -163,10 +221,15 @@ function ContactFormMapSection() {
                     name="mobile"
                     value={formData.mobile}
                     onChange={handleChange}
-                    placeholder="Enter Mobile Number"
+                    placeholder="Enter 10-digit Mobile Number"
                     required
+                    pattern="[0-9]{10}"
+                    maxLength="10"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1 focus:ring-gray-400 focus:border-gray-400 outline-none transition-all text-sm"
                   />
+                  {formData.mobile && formData.mobile.length !== 10 && (
+                    <p className="text-xs text-red-500 mt-1">Mobile number must be exactly 10 digits</p>
+                  )}
                 </div>
 
                 <div>
@@ -199,13 +262,28 @@ function ContactFormMapSection() {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="w-full md:w-auto px-10 py-3.5 bg-white border-2 border-gray-900 text-gray-900 text-xs sm:text-sm font-normal tracking-widest hover:bg-gray-900 hover:text-white transition-all duration-300 uppercase"
-              >
-                Send Message
-              </button>
-            </form>
+              <div className="space-y-4">
+                <button
+                  onClick={handleSubmit}
+                  disabled={submitStatus === 'sending'}
+                  className="w-full md:w-auto px-10 py-3.5 bg-white border-2 border-gray-900 text-gray-900 text-xs sm:text-sm font-normal tracking-widest hover:bg-gray-900 hover:text-white transition-all duration-300 uppercase disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
+                </button>
+
+                {submitStatus === 'success' && (
+                  <div className="text-green-600 text-sm font-medium">
+                    ✓ Message sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="text-red-600 text-sm font-medium">
+                    ✗ Failed to send message. Please try again or email us directly.
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
 
         </div>

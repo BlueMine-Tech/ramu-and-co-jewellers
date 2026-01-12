@@ -11,81 +11,53 @@ import silver9 from '../assets/silver9.png';
 import silver10 from '../assets/silver10.png';
 import silver11 from '../assets/silver11.png';
 import silver12 from '../assets/silver12.png';
+import silver13 from '../assets/silver13.png';
+import silver14 from '../assets/silver14.png';
+import silver15 from '../assets/silver15.png';
+import silver16 from '../assets/silver16.png';
+import silver17 from '../assets/silver17.png';
+import silver18 from '../assets/silver18.png';
+import silver19 from '../assets/silver19.png';
+import silver20 from '../assets/silver20.png';
+import silver21 from '../assets/silver21.png';
+import silver22 from '../assets/silver22.png';
+import silver23 from '../assets/silver23.png';
+import silver24 from '../assets/silver24.png';
+import silver25 from '../assets/silver25.png';
+import silver26 from '../assets/silver26.png';
+import silver27 from '../assets/silver27.png';
+import silver28 from '../assets/silver28.png';
 
 function SilverProductsShowcase() {
   const products = [
-    {
-      id: 1,
-      title: 'Silver Chain Necklace',
-      category: 'NECKLACES',
-      image: silver1,
-    },
-    {
-      id: 2,
-      title: 'Sterling Silver Ring',
-      category: 'RINGS',
-      image: silver2,
-    },
-    {
-      id: 3,
-      title: 'Silver Hoop Earrings',
-      category: 'EARRINGS',
-      image: silver3,
-    },
-    {
-      id: 4,
-      title: 'Silver Bracelet',
-      category: 'BRACELETS',
-      image: silver4,
-    },
-    {
-      id: 5,
-      title: 'Silver Pendant Set',
-      category: 'JEWELLERY SET',
-      image: silver5,
-    },
-    {
-      id: 6,
-      title: 'Silver Bangle',
-      category: 'BRACELETS',
-      image: silver6,
-    },
-    {
-      id: 7,
-      title: 'Silver Stud Earrings',
-      category: 'EARRINGS',
-      image: silver7,
-    },
-    {
-      id: 8,
-      title: 'Silver Chain Bracelet',
-      category: 'BRACELETS',
-      image: silver8,
-    },
-    {
-      id: 9,
-      title: 'Silver Designer Ring',
-      category: 'RINGS',
-      image: silver9,
-    },
-    {
-      id: 10,
-      title: 'Silver Necklace Set',
-      category: 'NECKLACES',
-      image: silver10,
-    },
-    {
-      id: 11,
-      title: 'Silver Drop Earrings',
-      category: 'EARRINGS',
-      image: silver11,
-    },
-    {
-      id: 12,
-      title: 'Silver Ornament Set',
-      category: 'JEWELLERY SET',
-      image: silver12,
-    },
+    { id: 1, title: 'Silver Chain Necklace', category: 'NECKLACES', image: silver1 },
+    { id: 2, title: 'Sterling Silver Ring', category: 'RINGS', image: silver2 },
+    { id: 3, title: 'Silver Hoop Earrings', category: 'EARRINGS', image: silver3 },
+    { id: 4, title: 'Silver Bracelet', category: 'BRACELETS', image: silver4 },
+    { id: 5, title: 'Silver Pendant Set', category: 'JEWELLERY SET', image: silver5 },
+    { id: 6, title: 'Silver Bangle', category: 'BRACELETS', image: silver6 },
+    { id: 7, title: 'Silver Stud Earrings', category: 'EARRINGS', image: silver7 },
+    { id: 8, title: 'Silver Chain Bracelet', category: 'BRACELETS', image: silver8 },
+    { id: 9, title: 'Silver Designer Ring', category: 'RINGS', image: silver9 },
+    { id: 10, title: 'Silver Necklace Set', category: 'NECKLACES', image: silver10 },
+    { id: 11, title: 'Silver Drop Earrings', category: 'EARRINGS', image: silver11 },
+    { id: 12, title: 'Silver Ornament Set', category: 'JEWELLERY SET', image: silver12 },
+    { id: 13, title: 'Silver Elegant Piece', category: 'RINGS', image: silver13 },
+    { id: 14, title: 'Silver Statement Necklace', category: 'NECKLACES', image: silver14 },
+    { id: 15, title: 'Silver Charm Bracelet', category: 'BRACELETS', image: silver15 },
+    { id: 16, title: 'Silver Dangle Earrings', category: 'EARRINGS', image: silver16 },
+    { id: 17, title: 'Silver Wedding Band', category: 'RINGS', image: silver17 },
+    { id: 18, title: 'Silver Choker Necklace', category: 'NECKLACES', image: silver18 },
+    { id: 19, title: 'Silver Cuff Bracelet', category: 'BRACELETS', image: silver19 },
+    { id: 20, title: 'Silver Pearl Earrings', category: 'EARRINGS', image: silver20 },
+    { id: 21, title: 'Silver Cocktail Ring', category: 'RINGS', image: silver21 },
+    { id: 22, title: 'Silver Layered Necklace', category: 'NECKLACES', image: silver22 },
+    { id: 23, title: 'Silver Anklet', category: 'BRACELETS', image: silver23 },
+    { id: 24, title: 'Silver Crystal Earrings', category: 'EARRINGS', image: silver24 },
+    { id: 25, title: 'Silver Bridal Set', category: 'JEWELLERY SET', image: silver25 },
+    { id: 26, title: 'Silver Collection Piece', category: 'JEWELLERY SET', image: silver26 },
+    { id: 26, title: 'Silver Collection Piece', category: 'JEWELLERY SET', image: silver27 },
+    { id: 26, title: 'Silver Collection Piece', category: 'JEWELLERY SET', image: silver28 },
   ];
 
   return (

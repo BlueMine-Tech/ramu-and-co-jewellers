@@ -23,8 +23,6 @@ function CustomizedContentSection() {
     'Traditional & Contemporary Styles',
     'Expert Craftsmen',
     'CAD Design Preview',
-    'Lifetime Craftsmanship Warranty',
-    'Flexible Budget Options',
     'Complimentary Modifications'
   ];
 
