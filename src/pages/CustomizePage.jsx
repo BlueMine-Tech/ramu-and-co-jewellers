@@ -5,15 +5,66 @@ import FeaturesSection from '../components/Features';
 
 import customizedhero from '../assets/customizedhero.png'
 
-// Import customized images
-import customized1 from '../assets/customized1.png';
-import customized2 from '../assets/customized2.png';
-import customized3 from '../assets/customized3.png';
-import customized4 from '../assets/customized4.png';
-import customized5 from '../assets/customized5.png';
-import customized6 from '../assets/customized6.png';
-import customized7 from '../assets/customized7.png';
-import customized8 from '../assets/customized8.png';
+// Import all customized images (03 to 61)
+import img03 from '../assets/customized/03.jpg';
+import img04 from '../assets/customized/04.jpg';
+import img05 from '../assets/customized/05.jpg';
+import img06 from '../assets/customized/06.jpg';
+import img07 from '../assets/customized/07.jpg';
+import img08 from '../assets/customized/08.jpg';
+import img09 from '../assets/customized/09.jpg';
+import img10 from '../assets/customized/10.jpg';
+import img11 from '../assets/customized/11.jpg';
+import img12 from '../assets/customized/12.jpg';
+import img13 from '../assets/customized/13.jpg';
+import img14 from '../assets/customized/14.jpg';
+import img15 from '../assets/customized/15.jpg';
+import img16 from '../assets/customized/16.jpg';
+import img17 from '../assets/customized/17.jpg';
+import img18 from '../assets/customized/18.jpg';
+import img19 from '../assets/customized/19.jpg';
+import img20 from '../assets/customized/20.jpg';
+import img21 from '../assets/customized/21.jpg';
+import img22 from '../assets/customized/22.jpg';
+import img23 from '../assets/customized/23.jpg';
+import img24 from '../assets/customized/24.jpg';
+import img25 from '../assets/customized/25.jpg';
+import img26 from '../assets/customized/26.jpg';
+import img27 from '../assets/customized/27.jpg';
+import img28 from '../assets/customized/28.jpg';
+import img29 from '../assets/customized/29.jpg';
+import img30 from '../assets/customized/30.jpg';
+import img31 from '../assets/customized/31.jpg';
+import img32 from '../assets/customized/32.jpg';
+import img33 from '../assets/customized/33.jpg';
+import img34 from '../assets/customized/34.jpg';
+import img35 from '../assets/customized/35.jpg';
+import img36 from '../assets/customized/36.jpg';
+import img37 from '../assets/customized/37.jpg';
+import img38 from '../assets/customized/38.jpg';
+import img39 from '../assets/customized/39.jpg';
+import img40 from '../assets/customized/40.jpg';
+import img41 from '../assets/customized/41.jpg';
+import img42 from '../assets/customized/42.jpg';
+import img43 from '../assets/customized/43.jpg';
+import img44 from '../assets/customized/44.jpg';
+import img45 from '../assets/customized/45.jpg';
+import img46 from '../assets/customized/46.jpg';
+import img47 from '../assets/customized/47.jpg';
+import img48 from '../assets/customized/48.jpg';
+import img49 from '../assets/customized/49.jpg';
+import img50 from '../assets/customized/50.jpg';
+import img51 from '../assets/customized/51.jpg';
+import img52 from '../assets/customized/52.jpg';
+import img53 from '../assets/customized/53.jpg';
+import img54 from '../assets/customized/54.jpg';
+import img55 from '../assets/customized/55.jpg';
+import img56 from '../assets/customized/56.jpg';
+import img57 from '../assets/customized/57.jpg';
+import img58 from '../assets/customized/58.jpg';
+import img59 from '../assets/customized/59.jpg';
+import img60 from '../assets/customized/60.jpg';
+import img61 from '../assets/customized/61.jpg';
 
 // Customized Content Section
 function CustomizedContentSection() {
@@ -170,12 +221,21 @@ function HowItWorksSection() {
 
 // Gallery Section
 function CustomizedGallerySection() {
-  const images = [customized1, customized2, customized3, customized4, customized5, customized6, customized7, customized8];
+  // Create array with all imported images - adding one more duplicate to complete the row
+  const images = [
+    img03, img04, img05, img06, img07, img08, img09, img10,
+    img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+    img21, img22, img23, img24, img25, img26, img27, img28, img29, img30,
+    img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
+    img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
+    img51, img52, img53, img54, img55, img56, img57, img58, img59, img60, img61,
+    img03 // Adding one more image to complete the row
+  ];
   
   const galleryImages = images.map((img, i) => ({
-    id: i + 1,
+    id: i + 3,
     image: img,
-    title: `Custom Design ${i + 1}`
+    title: `Custom Design ${i + 3}`
   }));
 
   return (
