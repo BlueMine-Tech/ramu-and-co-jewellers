@@ -4,8 +4,8 @@ import { Play } from 'lucide-react';
 // Import your thumbnail image
 import thumbnailUrl from '../assets/store.jpg';
 
-function GoogleDriveVideoSection() {
-  const videoId = "1hIF4pECP0iaRO_MiThmagMyi7mvqdjdO";
+function YouTubeVideoSection() {
+  const videoId = "VfFW2hsyjoY";
   const [isPlaying, setIsPlaying] = useState(false);
   
   return (
@@ -25,7 +25,7 @@ function GoogleDriveVideoSection() {
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             
             {!isPlaying ? (
-              // Thumbnail with Play Button
+              // Custom Thumbnail with Play Button
               <div 
                 className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg cursor-pointer group"
                 onClick={() => setIsPlaying(true)}
@@ -43,13 +43,13 @@ function GoogleDriveVideoSection() {
                 </div>
               </div>
             ) : (
-              // Video iframe
+              // YouTube iframe
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-                src={`https://drive.google.com/file/d/${videoId}/preview?autoplay=1`}
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
                 title="Ramu & Co Jewellers"
                 frameBorder="0"
-                allow="autoplay; encrypted-media"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
             )}
@@ -62,4 +62,4 @@ function GoogleDriveVideoSection() {
   );
 }
 
-export default GoogleDriveVideoSection;
+export default YouTubeVideoSection;
