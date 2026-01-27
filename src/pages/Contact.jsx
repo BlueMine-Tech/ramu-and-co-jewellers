@@ -112,13 +112,107 @@ function ContactFormMapSection() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '5020b0bf-7511-48ac-9a56-76b41aa85545', // Replace with your key from web3forms.com
+          access_key: '5020b0bf-7511-48ac-9a56-76b41aa85545',
+          from_name: 'Ramu & Co Jewellers Website',
+          subject: `New Enquiry: ${formData.subject}`,
           name: formData.name,
           email: formData.email,
           phone: formData.mobile,
-          subject: formData.subject,
-          message: formData.comments,
-          to: 'manojramesh@ramuandcojewellers.com'
+          message: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        🏆 RAMU & CO JEWELLERS 🏆
+        NEW CUSTOMER ENQUIRY RECEIVED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 CUSTOMER INFORMATION:
+────────────────────────────────────────────────
+
+👤 Name:           ${formData.name}
+📧 Email:          ${formData.email}
+📱 Mobile:         +91 ${formData.mobile}
+📝 Subject:        ${formData.subject}
+
+────────────────────────────────────────────────
+
+💬 CUSTOMER MESSAGE:
+
+${formData.comments || 'No additional message provided'}
+
+────────────────────────────────────────────────
+
+⏰ RECEIVED ON:
+${new Date().toLocaleString('en-IN', { 
+  timeZone: 'Asia/Kolkata',
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit'
+})}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 RAMU & CO JEWELLERS
+   160, Big Bazaar Street, Singarathope
+   Devathanam, Tiruchirappalli - 620 008
+   Tamilnadu, India
+
+📞 Contact: +91 99449 54450 | +91 94885 34450
+📧 Email: manojramesh@ramuandcojewellers.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    This is an automated notification from
+         www.ramuandcojewellers.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          `,
+          to: 'priyamuthukumar1203@gmail.com',
+          replyto: formData.email,
+          // Auto-reply for customer
+          autoresponse: true,
+          autoresponse_subject: '✓ Thank You for Contacting Ramu & Co Jewellers',
+          autoresponse_message: `Dear ${formData.name},
+
+Thank you for reaching out to Ramu & Co Jewellers! 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ YOUR MESSAGE HAS BEEN RECEIVED
+
+We have successfully received your enquiry regarding:
+"${formData.subject}"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Our team will carefully review your message and get back to you within 24-48 hours. We appreciate your interest in our exquisite jewelry collection and look forward to assisting you.
+
+For any urgent queries, please feel free to contact us directly:
+
+📞 Call Us:
+   +91 99449 54450
+   +91 94885 34450
+
+📧 Email Us:
+   manojramesh@ramuandcojewellers.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 VISIT OUR SHOWROOM:
+
+Ramu & Co Jewellers
+160, Big Bazaar Street, Singarathope
+Devathanam, Tiruchirappalli - 620 008
+Tamilnadu, India
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Warm Regards,
+The Ramu & Co Jewellers Team
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This is an automated response. Please do not reply to this email.
+For assistance, use the contact details provided above.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
         })
       });
       
