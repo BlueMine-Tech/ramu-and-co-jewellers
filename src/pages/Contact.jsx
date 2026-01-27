@@ -166,7 +166,7 @@ ${new Date().toLocaleString('en-IN', {
          www.ramuandcojewellers.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           `,
-          to: 'priyamuthukumar1203@gmail.com',
+          to: 'manojramesh@ramuandcojewellers.com',
           replyto: formData.email,
           // Auto-reply for customer
           autoresponse: true,
