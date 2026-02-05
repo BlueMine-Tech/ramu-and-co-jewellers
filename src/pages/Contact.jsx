@@ -4,42 +4,58 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 // Contact Info Section
 function ContactInfoSection() {
   return (
-    <div className="bg-gradient-to-br from-amber-50 to-orange-50 py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-gradient-to-br from-amber-50 to-orange-50 py-16">
+      <div className="container mx-auto px-4">
         {/* Page Title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12">
           Contact Us
         </h1>
-        
-        <div className="grid md:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Address */}
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <MapPin className="w-12 h-12 mx-auto mb-4 text-amber-600" />
-            <h3 className="font-semibold text-lg mb-2">Visit Us</h3>
-            <p className="text-gray-600">
-              Ramu & Co Jewellers<br />
-              160, Big Bazaar Street, Singarathope,<br />
-              Devathanam, Tiruchirappalli - 620 008,<br />
+          <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MapPin className="w-8 h-8 text-amber-600" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Visit Us</h3>
+            <p className="text-gray-600 leading-relaxed">
+              <strong>Ramu & Co Jewellers</strong><br />
+              160, Big Bazaar Street,<br />
+              Singarathope, Devathanam,<br />
+              Tiruchirappalli - 620 008,<br />
               Tamilnadu, India.
             </p>
           </div>
 
           {/* Call us */}
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <Phone className="w-12 h-12 mx-auto mb-4 text-amber-600" />
-            <h3 className="font-semibold text-lg mb-2">Call us</h3>
+          <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Phone className="w-8 h-8 text-amber-600" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Call us</h3>
             <p className="text-gray-600">
-              +91 99449 54450<br />
-              +91 94885 34450
+              <a href="tel:+919944954450" className="block hover:text-amber-600 transition-colors mb-2">
+                +91 99449 54450
+              </a>
+              <a href="tel:+919488534450" className="block hover:text-amber-600 transition-colors">
+                +91 94885 34450
+              </a>
             </p>
           </div>
 
           {/* Mail us */}
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <Mail className="w-12 h-12 mx-auto mb-4 text-amber-600" />
-            <h3 className="font-semibold text-lg mb-2">Mail us</h3>
+          <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Mail className="w-8 h-8 text-amber-600" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Mail us</h3>
             <p className="text-gray-600">
-              manojramesh@ramuandcojewellers.com
+              <a 
+                href="mailto:manojramesh@ramuandcojewellers.com" 
+                className="hover:text-amber-600 transition-colors break-all"
+              >
+                manojramesh@ramuandcojewellers.com
+              </a>
             </p>
           </div>
         </div>
@@ -88,6 +104,7 @@ function ContactFormMapSection() {
       const whatsappMessage = `
 🏆 *RAMU & CO JEWELLERS*
 *NEW CUSTOMER ENQUIRY*
+
 ━━━━━━━━━━━━━━━━━━━━━━
 
 📋 *CUSTOMER INFORMATION:*
@@ -111,21 +128,21 @@ ${new Date().toLocaleString('en-IN', {
 })}
 
 ━━━━━━━━━━━━━━━━━━━━━━
-From: www.ramuandcojewellers.com
+From: www.ramuandcojewellerstrichy.com
       `.trim();
 
       // Encode message for WhatsApp URL
       const encodedMessage = encodeURIComponent(whatsappMessage);
-      
+
       // WhatsApp number (remove the + and any spaces)
       const whatsappNumber = '919944954450';
-      
+
       // Create WhatsApp URL
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-      
+
       // Open WhatsApp in a new window
       window.open(whatsappURL, '_blank');
-      
+
       // Mark as success and reset form
       setSubmitStatus('success');
       setFormData({
@@ -135,9 +152,9 @@ From: www.ramuandcojewellers.com
         subject: '',
         comments: ''
       });
-      
+
       setTimeout(() => setSubmitStatus(''), 5000);
-      
+
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
@@ -146,126 +163,133 @@ From: www.ramuandcojewellers.com
   };
 
   return (
-    <div className="py-16 px-4 bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-        {/* Google Map */}
-        <div className="rounded-lg overflow-hidden shadow-lg h-[500px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5!2d78.69!3d10.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ5JzEyLjAiTiA3OMKwNDEnMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Ramu & Co Jewellers Location"
-          ></iframe>
-        </div>
+    <div className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+          {/* Google Map */}
+          <div className="rounded-lg overflow-hidden shadow-lg h-[500px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2!2d78.6869!3d10.8271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ5JzM3LjYiTiA3OMKwNDEnMTIuOCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ramu & Co Jewellers Location"
+            />
+          </div>
 
-        {/* Contact Form */}
-        <div>
-          <h2 className="text-3xl font-bold mb-2 text-gray-800">Get In Touch With Us</h2>
-          <p className="text-gray-600 mb-6">
-            If you wish to directly reach us, please fill out the form below
-          </p>
+          {/* Contact Form */}
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Get In Touch With Us</h2>
+            <p className="text-gray-600 mb-6">If you wish to directly reach us, please fill out the form below</p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Name *
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              />
-            </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                  placeholder="Your name"
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              />
-            </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                  placeholder="your.email@example.com"
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Mobile *
-              </label>
-              <input
-                type="tel"
-                name="mobile"
-                value={formData.mobile}
-                onChange={handleChange}
-                required
-                pattern="[0-9]{10}"
-                placeholder="10 digit mobile number"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              />
-              {formData.mobile && formData.mobile.length !== 10 && (
-                <p className="text-red-500 text-sm mt-1">
-                  Mobile number must be exactly 10 digits
-                </p>
+              <div>
+                <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">
+                  Mobile *
+                </label>
+                <input
+                  type="tel"
+                  id="mobile"
+                  name="mobile"
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  required
+                  pattern="[0-9]{10}"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                  placeholder="10-digit mobile number"
+                />
+                {formData.mobile && formData.mobile.length !== 10 && (
+                  <p className="text-red-500 text-xs mt-1">Mobile number must be exactly 10 digits</p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                  Subject *
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                  placeholder="What is this regarding?"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="comments" className="block text-sm font-medium text-gray-700 mb-1">
+                  Comments
+                </label>
+                <textarea
+                  id="comments"
+                  name="comments"
+                  value={formData.comments}
+                  onChange={handleChange}
+                  rows="4"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all resize-none"
+                  placeholder="Additional details..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={submitStatus === 'sending'}
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {submitStatus === 'sending' ? 'Opening WhatsApp...' : 'Send via WhatsApp'}
+              </button>
+
+              {submitStatus === 'success' && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg text-sm">
+                  ✓ WhatsApp opened! Please send the message to complete your enquiry.
+                </div>
               )}
-            </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Subject *
-              </label>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Comments
-              </label>
-              <textarea
-                name="comments"
-                value={formData.comments}
-                onChange={handleChange}
-                rows="4"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              disabled={submitStatus === 'sending'}
-              className="w-full bg-amber-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-amber-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
-            >
-              {submitStatus === 'sending' ? 'Opening WhatsApp...' : 'Send via WhatsApp'}
-            </button>
-
-            {submitStatus === 'success' && (
-              <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-md">
-                ✓ WhatsApp opened! Please send the message to complete your enquiry.
-              </div>
-            )}
-
-            {submitStatus === 'error' && (
-              <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-md">
-                ✗ Failed to open WhatsApp. Please try again or contact us directly at +91 99449 54450
-              </div>
-            )}
-          </form>
+              {submitStatus === 'error' && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg text-sm">
+                  ✗ Failed to open WhatsApp. Please try again or contact us directly at +91 99449 54450
+                </div>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -275,7 +299,7 @@ From: www.ramuandcojewellers.com
 // Main Contact Page Component
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <ContactInfoSection />
       <ContactFormMapSection />
     </div>
