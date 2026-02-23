@@ -2,7 +2,7 @@ import React from 'react';
 import { Target, Eye, Award } from 'lucide-react';
 import AboutUsBanner from '../components/AboutBanner';
 import store from '../assets/store.jpg'
-import director from '../assets/director.jpg'
+import director from '../assets/director.png'
 import FeaturesSection from '../components/Features';
 import SpecialCollectionSection from '../components/SpecialCollections';
 // Hero Section with Image
