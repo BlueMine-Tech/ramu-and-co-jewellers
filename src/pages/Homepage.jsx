@@ -11,9 +11,7 @@ const Homepage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Herosection />
-      <h1 className="text-3xl font-bold text-center mt-8">
-  Trusted Gold Jewellery Shop in Trichy
-</h1>
+      <h1>Ramu & Co Jewellers – Trusted Gold Jewellery Shop in Trichy</h1>
 
 <p className="text-center max-w-3xl mx-auto mt-4 text-gray-700">
   Ramu & Co Jewellers is a leading gold jewellery store in Trichy offering bridal jewellery, traditional gold collections, and modern designs crafted with trust and quality. Visit our showroom in Tiruchirappalli for premium jewellery collections.
