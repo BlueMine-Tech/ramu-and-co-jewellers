@@ -15,9 +15,9 @@ function AboutHeroSection() {
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8">
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-3 sm:mb-4">
+              <span> className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-3 sm:mb-4">
                 About Ramu & Co Jewellers
-              </h1>
+              </span>
               <div className="w-20 h-0.5 bg-gray-300"></div>
             </div>
 
