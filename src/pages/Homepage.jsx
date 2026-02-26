@@ -26,6 +26,13 @@ const Homepage = () => {
             </div>
             <div className="w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-gray-400 to-gray-300"></div>
           </div>
+          <div>
+      <h1>Trusted Gold Jewellery Shop in Trichy</h1>
+
+      {/* rest of your content */}
+    </div>
+  );
+}
 
           {/* Main Heading */}
           <h2 
