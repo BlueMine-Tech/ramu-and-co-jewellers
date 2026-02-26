@@ -68,6 +68,8 @@ const Herosection = () => {
                 }}
               >
                 <img 
+                  src="/images/banner.jpg" 
+                  alt="Bridal gold jewellery collection in Trichy at Ramu & Co Jewellers"
                   src={slide.image} 
                   alt={slide.alt} 
                   className="w-full h-auto object-contain"
