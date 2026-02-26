@@ -42,7 +42,10 @@ const Homepage = () => {
   <h2 className="text-2xl font-bold mb-4">
     Best Gold Jewellery Shop in Trichy
   </h2>
-
+<p>We are serving customers...</p>
+    <h2>About Our Jewellery Store</h2> 
+     <h2>Our Gold Jewellery Collections</h2>
+     <h2>Visit Our Showroom in Trichy</h2>
   <p className="mb-4">
     Ramu & Co Jewellers is one of the most trusted gold jewellery shops in Trichy, offering a wide range of bridal jewellery, traditional gold ornaments, daily wear collections, and custom designs. Our commitment to purity, quality craftsmanship, and customer satisfaction makes us a preferred jewellery store in Tiruchirappalli.
   </p>
